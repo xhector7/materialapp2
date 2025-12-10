@@ -62,7 +62,6 @@ document.addEventListener('DOMContentLoaded', function() {
         loading.style.display = 'block';
         resultsContainer.innerHTML = '';
         
-        // URL de la API con JSON (como el ejemplo de tu profesor)
         const apiUrl = `https://musicbrainz.org/ws/2/artist?query=${encodeURIComponent(query)}&fmt=json`;
         
         fetch(apiUrl)
