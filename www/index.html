@@ -2,16 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com https://fonts.gstatic.com https://cdn.jsdelivr.net https://fonts.googleapis.com 'unsafe-eval'; style-src https://cdn.jsdelivr.net https://fonts.googleapis.com 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-    <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
-    <title>Materialize 2025</title>
     <!-- Fonts Google -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <!-- CSS materialize -->
     <link rel="stylesheet" href="css/materialize.min.css" />
   </head>
+  <body>
     <nav class="nav navbar">
       <div class="nav-wrapper">
         <a href="#!" class="brand-logo">Logo</a>
@@ -33,7 +31,7 @@
           </div>
           <a href="#user"><img class="circle" src="image.jpg" alt="User Image"></a>
           <a href="#name"><span class="white-text name">Hector Cardizales</span></a>
-          <a href="#email"><span class="white-text email">loopsis753@gmail.com/span></a>
+          <a href="#email"><span class="white-text email">loopsis753@gmail.com</span></a>
         </div>
       </li>
 
@@ -43,7 +41,6 @@
       <li><a class="subheader">Subheader</a></li>
       <li><a class="waves-effect" href="#!">Third Link With Nouns</a></li>
     </ul>
-
 
     <ul id="dropdown1" class="dropdown-content">
       <li><a href="#!">one</a></li>
@@ -57,8 +54,50 @@
         <ul class="tabs" id="tabs-swipe-demo">
           <li class="tab col s3"><a href="#test1">Flight</a></li>
           <li class="tab col s3"><a class="active" href="#test2">Luggage</a></li>
-          <li class="tab col s3"><a href="#test3">Store</a></li>
+          <li class="tab col s3"><a href="#test3">News</a></li>
         </ul>
+      </div>
+    </div>
+
+    <div id="test1" class="col s12">
+      <div class="container">
+        <h4>Flight Content</h4>
+        <p>Flight...</p>
+      </div>
+    </div>
+    
+    <div id="test2" class="col s12">
+      <div class="container">
+        <h4>Luggage Content</h4>
+        <p> Luggage...</p>
+      </div>
+    </div>
+    
+    <div id="test3" class="col s12">
+      <div class="container">
+        <h4>Music Artists Search</h4>
+        <div class="row">
+          <div class="input-field col s8">
+            <input type="text" id="artistInput" placeholder="Ej: queen, madonna, radiohead">
+            <label for="artistInput">Artist Name</label>
+          </div>
+          <div class="col s4">
+            <button class="btn waves-effect waves-light" onclick="searchArtists()">Search
+              <i class="material-icons right">search</i>
+            </button>
+          </div>
+        </div>
+        
+        <div id="loading" style="display: none;">
+          <div class="progress">
+            <div class="indeterminate"></div>
+          </div>
+          <p>Loading artists...</p>
+        </div>
+        
+        <div id="resultsContainer">
+          <p>Enter an artist name and click Search to see results from MusicBrainz API.</p>
+        </div>
       </div>
     </div>
 
@@ -69,24 +108,5 @@
     <!-- init -->
     <script src="js/index.js"></script>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const elems = document.querySelectorAll('.sidenav');
-        M.Sidenav.init(elems, {
-          edge: 'left',
-          draggable: true
-        });
-
-        const dropdownElems = document.querySelectorAll('.dropdown-trigger');
-        M.Dropdown.init(dropdownElems, {
-          hover: true,
-          coverTrigger: false
-        });
-
-        const tabsEl = document.querySelector('.tabs');
-        const tabsInstance = M.Tabs.init(tabsEl, {});
-        tabsInstance.select("test3");
-      });
-    </script>
   </body>
 </html>
